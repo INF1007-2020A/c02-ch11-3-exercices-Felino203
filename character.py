@@ -6,7 +6,6 @@ Classes pour représenter un personnage.
 
 
 import random
-
 import utils
 
 
