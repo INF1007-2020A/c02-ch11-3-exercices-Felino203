@@ -82,9 +82,9 @@ class Magician(Character):
 
 	# TODO: Surcharger la méthode `compute_damage` 
 	def compute_damage(self, other):
-		if will_use_spell(self):
+		if self.will_use_spell():
 			self.mp -= self.spell.mp_cost
-			return self._computer_magical_damage(other)
+			return self._compute_magical_damage(other)
 		else:
 			return self._compute_physical_damage(other)
 		# Si le magicien va utiliser sa magie (`will_use_spell()`):
@@ -108,5 +108,5 @@ class Magician(Character):
 
 	def _compute_physical_damage(self, other):
 		# TODO: Calculer le dommage physique exactement de la même façon que dans `Character`
-		pass
+		return super().compute_damage(other)
 
